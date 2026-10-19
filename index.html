@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WattWatch | IoT Smart Energy Monitoring</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="bolt">⚡</span><div><b>WattWatch</b><small>IoT Energy Monitor</small></div></div>
+  <nav><a class="active" href="#dashboard">▦ <span>Dashboard</span></a><a href="#meters">◉ <span>Smart Meters</span></a><a href="#analytics">▥ <span>Analytics</span></a><a href="#alerts">♧ <span>Alerts</span></a><a href="#reports">▤ <span>Reports</span></a></nav>
+  <div class="connection"><i></i><b>Monitoring gateway</b><small>Demo gateway connected</small></div>
+</aside>
+<main class="main" id="dashboard">
+<header class="topbar"><div><p class="eyebrow">ENERGY INTELLIGENCE</p><h1>Smart Energy Dashboard</h1><p class="muted">Monitor consumption, identify unusual usage, and make better energy decisions.</p></div><div class="actions"><span class="live"><i></i> Demo mode</span><button id="refresh" class="btn light">↻ Refresh readings</button></div></header>
+<section class="metrics">
+ <article class="metric"><div class="metric-head">Energy used today <span class="symbol blue">⚡</span></div><strong id="energy">42.8 <small>kWh</small></strong><p class="good">↓ 8.4% <span>versus yesterday</span></p></article>
+ <article class="metric"><div class="metric-head">Estimated cost <span class="symbol green">₦</span></div><strong id="cost">₦6,420</strong><p class="muted">Illustrative rate: ₦150/kWh</p></article>
+ <article class="metric"><div class="metric-head">Current demand <span class="symbol amber">⌁</span></div><strong id="power">2.40 <small>kW</small></strong><p class="good">Within demo threshold</p></article>
+ <article class="metric"><div class="metric-head">Connected meters <span class="symbol purple">◉</span></div><strong id="connected">4 <small>/ 4</small></strong><p class="good">All demo meters online</p></article>
+</section>
+<section class="grid">
+ <article class="panel" id="analytics"><div class="panel-title"><div><h2>Consumption analytics</h2><p>Energy usage over time</p></div><select id="period"><option value="today">Today</option><option value="week">This week</option></select></div><div class="chart-meta"><span><i class="dot"></i> Energy consumed</span><b id="chartTotal">42.8 kWh</b></div><div class="chartbox"><canvas id="chart"></canvas></div><div class="xlabels"><span>6 AM</span><span>9 AM</span><span>12 PM</span><span>3 PM</span><span>6 PM</span><span>9 PM</span><span>12 AM</span></div></article>
+ <article class="panel" id="alerts"><div class="panel-title"><div><h2>Recent alerts</h2><p>Monitoring events</p></div><span class="count" id="alertCount">2</span></div><div id="alertList" class="alerts"></div><button id="testAlert" class="btn full light">＋ Simulate test alert</button></article>
+</section>
+<section class="panel meters" id="meters"><div class="panel-title"><div><h2>Smart meter status</h2><p>Readings from the simulated IoT gateway</p></div><span class="gateway"><i></i> Gateway connected</span></div><div class="tablewrap"><table><thead><tr><th>Meter / location</th><th>Power</th><th>Today</th><th>Voltage</th><th>Signal</th><th>Status</th></tr></thead><tbody id="meterRows"></tbody></table></div></section>
+<section class="lower">
+ <article class="panel" id="reports"><div class="panel-title"><div><h2>Energy reports</h2><p>Prepare a summary or export records</p></div><span class="report-symbol">▤</span></div><div class="fields"><label>Period<select id="reportPeriod"><option>Today</option><option>This week</option><option>This month</option></select></label><label>Location<select id="location"><option>All locations</option><option>Main shop</option><option>Shop floor</option><option>Warehouse</option><option>Office</option></select></label></div><button id="generate" class="btn primary">Generate report</button> <button id="csv" class="btn light">Export CSV</button><p id="reportMessage" class="report-message">Choose a location and generate a report.</p></article>
+ <article class="panel"><div class="panel-title"><div><h2>Energy efficiency tip</h2><p>Practical recommendation</p></div><span class="symbol green">✦</span></div><div class="tip"><b>Review standby consumption</b><p>Switch off equipment that is not needed after business hours. Comparing overnight readings may help identify devices that remain on unnecessarily.</p><span>Potential energy-saving opportunity</span></div></article>
+</section>
+<footer>WattWatch · Academic project prototype · All meter readings are simulated.</footer>
+</main><script src="script.js"></script>
+</body></html>
